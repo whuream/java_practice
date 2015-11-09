@@ -26,8 +26,18 @@ public class ClassA {
     }
 
     @Min(value = 18)
-    private int int1;
+    private int int1 = 999;
     private int int2;
+
+    public int int3;
+
+    public ClassA(){
+        int2 = 100;
+    }
+
+    public ClassA(int a){
+
+    }
 
     @NotNull
     @Size(min = 1)

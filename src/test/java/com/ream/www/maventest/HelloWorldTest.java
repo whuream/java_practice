@@ -121,6 +121,167 @@ public class HelloWorldTest {
         System.out.println(Joiner.on("and").join(longs));
 
         valid(null);
+
+        ClassB classB = new ClassB();
+        ClassA classA = (ClassA) classB;
+        ClassB classB1 = (ClassB) classA;
+
+        System.out.println(classA.int3);
+        System.out.println(classB1.int3);
+
+
+        ClassA classA1 = new ClassB();
+        ClassB classB2 = (ClassB) classA1;
+
+        System.out.println(classA1.int3);
+        System.out.println(((ClassB) classA1).int3);
+        System.out.println(classB2.int3);
+
     }
+
+    @Test
+    public void test6(){
+        ClassA classA = new ClassA();
+        System.out.println(classA.getInt1());
+    }
+
+    public void swap(int a){
+        a = 0;
+    }
+
+    public void swap(Integer a){
+        a = 0;
+    }
+
+    public void swap(ClassA a){
+        a = new ClassA();
+        a.int3 = 1099;
+    }
+
+    @Test
+    public void test7(){
+        int a = 100;
+        swap(a);
+        System.out.println(a);
+
+        Integer b = 100;
+        swap(b);
+        System.out.println(b);
+
+        ClassA classA = new ClassA();
+        swap(classA);
+        System.out.println(classA.int3);
+
+        Integer i1 = 100001;
+
+        Integer i2 = 100000;
+        i2 += 1;
+
+        int i3 = 100001;
+
+        System.out.println(i1 == i3);
+    }
+
+    class I4{
+        public int i1 = 888;
+        public Integer i2 = 888;
+    }
+
+    class I3{
+        public int i1 = 999;
+        public Integer i2 = 999;
+
+        public I4 i4 = new I4();
+    }
+
+    public void change(int a){
+        a = 0;
+    }
+
+    public void change(Integer a){
+        a = 0;
+    }
+
+    public I4 change(I3 i3){
+        i3.i1 = 0;
+        i3.i2 = 0;
+
+        return i3.i4;
+    }
+
+    public void change2(I3 i3){
+        i3 = new I3();
+        i3.i1 = 0;
+        i3.i2 = 0;
+    }
+
+
+    @Test
+    // function in test
+    public void test8(){
+        // int use value
+        int i1 = 999;
+        change(i1);
+        System.out.println(i1);
+
+        // Integer use value (or no values pointer?)
+        Integer i2 = 999;
+        change(i2);
+        System.out.println(i2);
+
+        // object use pointer
+        I3 i3 = new I3();
+        change(i3);
+        System.out.println(i3.i1 + i3.i2);
+
+        I3 i4 = new I3();
+        change2(i4);
+        System.out.println(i4.i1 + i4.i2);
+    }
+
+    @Test
+    // function out test
+    public void test9(){
+        // int and Integer use value obviously
+
+        // object use pointer
+        I3 i3 = new I3();
+        i3.i4.i1 = 999;
+        i3.i4.i2 = 999;
+
+        I4 i4 = change(i3);
+        System.out.println(i4.i1 + i4.i2);
+
+        i3.i4.i1 = 0;
+        i3.i4.i2 = 0;
+        System.out.println(i4.i1 + i4.i2);
+
+        i3.i4 = null;
+
+        System.out.println(i4.i1 + i4.i2);
+
+        Integer i1 = new Integer(100);
+        Integer i2 = i1;
+        i2 = 0;
+        System.out.println(i1);
+    }
+
+    @Test
+    // = test
+    public void test10(){
+        // Integer use value
+        Integer i1 = new Integer(100);
+        Integer i2 = i1;
+        i1 = 0;
+        System.out.println(i2);
+
+        // Object use pointer
+        I4 i4 = new I4();
+        I4 i41 = i4;
+        i4.i2 = 0;
+        System.out.println(i41.i2);
+    }
+
+
 }
 
