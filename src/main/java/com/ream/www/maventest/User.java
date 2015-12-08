@@ -21,8 +21,8 @@ import javax.validation.constraints.Size;
  *
  */
 public class User {
-    @Min(1)
-    private int userId;
+    @Min(value = 1, message = "用户id 》=1")
+    private Integer userId;
     @NotNull(message = "用户名不能为空！")
     @Size(min=1,message = "用户名不能为空！")
     private String userName;
@@ -36,7 +36,7 @@ public class User {
     public User() {
     }
 
-    public User(int userId, String userName, String userPwd, int userAge) {
+    public User(Integer userId, String userName, String userPwd, int userAge) {
         this.userId = userId;
         this.userName = userName;
         this.userPwd = userPwd;
@@ -78,7 +78,7 @@ public class User {
     public static void main(String[] args) {
         ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
         Validator validator = factory.getValidator();
-        User user = new User(1, "tanlan", "123", 10);
+        User user = new User(0, "tanlan", "123", 10);
         Set<ConstraintViolation<User>> constraintViolations = validator
                 .validate(user);
 
