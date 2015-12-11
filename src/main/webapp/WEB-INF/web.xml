@@ -5,13 +5,25 @@
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
     http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
 
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>/WEB-INF/maven_test-servlet.xml</param-value>
+    </context-param>
+
     <servlet>
-        <servlet-name>UserServlet</servlet-name>
-        <servlet-class>com.ream.www.maventest.a</servlet-class>
+        <servlet-name>maven_test</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
     </servlet>
+
     <servlet-mapping>
-        <servlet-name>UserServlet</servlet-name>
-        <url-pattern>/user</url-pattern>
+        <servlet-name>maven_test</servlet-name>
+        <url-pattern>/c/*</url-pattern>
     </servlet-mapping>
+
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+
 
 </web-app> 

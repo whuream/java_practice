@@ -454,7 +454,7 @@ public class HelloWorldTest {
     public void test0009(){
         A1<A2> a2A1 = new A1<A2>();
         Class cl = a2A1.getClass();
-        ParameterizedType parameterizedType = (ParameterizedType) (Type)cl;
+        //ParameterizedType parameterizedType = (ParameterizedType) (Type)cl;
 
     }
 
@@ -490,7 +490,11 @@ public class HelloWorldTest {
     public static class TA{
         private int a;
 
-        public Integer bccc;
+        public Integer bccc = 100;
+
+        public Boolean bbb = false;
+
+        public Boolean bca = true;
 
         public int getB(){
             return 120;
