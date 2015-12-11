@@ -5,6 +5,7 @@ import com.ream.www.maventest.Test2;
 import com.ream.www.maventest.map.Test2Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -21,5 +22,11 @@ public class MainController {
         Test2 test = test2Mapper.selectTest(1);
 
         return JSON.toJSONString(test);
+    }
+
+    @RequestMapping("/b")
+    public String b(Model model){
+        model.addAttribute("message", "Hello World!");
+        return "hello";
     }
 }
