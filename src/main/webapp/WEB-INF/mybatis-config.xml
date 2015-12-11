@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+    <settings>
+        <!-- 该 setting对应的类为 org.apache.ibatis.session.Configuration
+            该类中定义了更多的属性及其默认值
+         -->
+        <!-- 开启下划线转驼峰 -->
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+    </settings>
+    <typeHandlers>
+
+
+    </typeHandlers>
+</configuration>

@@ -1,6 +1,7 @@
 package com.ream.www.maventest;
 
 import com.alibaba.fastjson.JSON;
+import com.ream.www.maventest.map.Test2Mapper;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
