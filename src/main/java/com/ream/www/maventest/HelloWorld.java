@@ -23,7 +23,11 @@ public class HelloWorld
 {
     static Logger log = Logger.getLogger(HelloWorld.class);
 
-    public static void main(String[] args)
+    public static void main(String[] args){
+
+    }
+
+    public static void main1(String[] args)
     {
 
         ObjectMapper om = new ObjectMapper();
@@ -95,6 +99,7 @@ public class HelloWorld
         classA2.returnString((Integer)(Object)Integer.valueOf(10));
         //System.out.println(new Genson().serialize(classA2));
         //System.out.println(JSON.toJSONString(classA2));
+
 
     }
 }

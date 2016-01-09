@@ -1,5 +1,7 @@
 package com.ream.www.maventest;
 
+import org.hibernate.validator.internal.metadata.core.ConstraintHelper;
+
 import java.util.Set;
 
 import javax.validation.ConstraintViolation;
@@ -24,14 +26,40 @@ public class User {
     @Min(value = 1, message = "用户id 》=1")
     private Integer userId;
     @NotNull(message = "用户名不能为空！")
-    @Size(min=1,message = "用户名不能为空！")
-    private String userName;
+    @Size(min=1,message = "The license plate '${validatedValue}' must be between {min}")
+    private String userName = "";
     @NotNull
-    @Size(min = 6, max = 20, message = "密码长度必须在6-20之间！")
+    @Size(min = 6, max = 20)
     private String userPwd;
     @Min(value = 18, message = "年龄最小值必须是18")
     @Max(value = 60, message = "年龄最大值必须是60")
     private int userAge;
+
+    @PrintMe
+    private Long ck;
+
+    @CheckF(time = 1000)
+    private String fuc = "";
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
+    }
+
+    public Long getCk() {
+        return ck;
+    }
+
+    public void setCk(Long ck) {
+        this.ck = ck;
+    }
+
+    public String getFuc() {
+        return fuc;
+    }
+
+    public void setFuc(String fuc) {
+        this.fuc = fuc;
+    }
 
     public User() {
     }
@@ -78,7 +106,7 @@ public class User {
     public static void main(String[] args) {
         ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
         Validator validator = factory.getValidator();
-        User user = new User(0, "tanlan", "123", 10);
+        User user = new User(0, "", "123", 10);
         Set<ConstraintViolation<User>> constraintViolations = validator
                 .validate(user);
 
