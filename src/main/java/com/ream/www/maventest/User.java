@@ -26,8 +26,8 @@ public class User {
     @Min(value = 1, message = "用户id 》=1")
     private Integer userId;
     @NotNull(message = "用户名不能为空！")
-    @Size(min=1,message = "The license plate '${validatedValue}' must be between {min}")
-    private String userName = "";
+    @Size(min=1000, message = "The license plate '${validatedValue}' must be between {min}")
+    private String userName = "nnn";
     @NotNull
     @Size(min = 6, max = 20)
     private String userPwd;
@@ -106,7 +106,7 @@ public class User {
     public static void main(String[] args) {
         ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
         Validator validator = factory.getValidator();
-        User user = new User(0, "", "123", 10);
+        User user = new User(0, "xxx", "123", 10);
         Set<ConstraintViolation<User>> constraintViolations = validator
                 .validate(user);
 
