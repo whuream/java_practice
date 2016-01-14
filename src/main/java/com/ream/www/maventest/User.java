@@ -1,13 +1,15 @@
 package com.ream.www.maventest;
 
+import com.alibaba.fastjson.JSON;
+import com.google.common.collect.Lists;
+import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.ScriptAssert;
 import org.hibernate.validator.internal.metadata.core.ConstraintHelper;
 
+import java.util.List;
 import java.util.Set;
 
-import javax.validation.ConstraintViolation;
-import javax.validation.Validation;
-import javax.validation.Validator;
-import javax.validation.ValidatorFactory;
+import javax.validation.*;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
@@ -22,6 +24,7 @@ import javax.validation.constraints.Size;
  * @author tanlan
  *
  */
+@ScriptAssert(lang = "jython", script = "_this.ck > 10 and _this.sc < -100")
 public class User {
     @Min(value = 1, message = "用户id 》=1")
     private Integer userId;
@@ -35,11 +38,20 @@ public class User {
     @Max(value = 60, message = "年龄最大值必须是60")
     private int userAge;
 
+    @NotBlank
+    private String blank;
+
     @PrintMe
     private Long ck;
 
     @CheckF(time = 1000)
     private String fuc = "";
+
+    @Valid
+    List<User> users;
+
+    private Long sc = 100l;
+
 
     public void setUserId(Integer userId) {
         this.userId = userId;
@@ -107,11 +119,19 @@ public class User {
         ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
         Validator validator = factory.getValidator();
         User user = new User(0, "xxx", "123", 10);
+        user.users = Lists.newArrayList(new User(null, null, null, -1));
+        user.blank = "  ";
+        System.out.println("-------------ssssssssssssssssssss");
+        System.out.println(user.sc);
+        System.out.println("-------------ssssssssssssssssssss");
+
         Set<ConstraintViolation<User>> constraintViolations = validator
                 .validate(user);
 
         for (ConstraintViolation<User> constraintViolation : constraintViolations) {
-            System.out.println(constraintViolation.getMessage());
+            System.out.println(constraintViolation.getMessage() + constraintViolation.getPropertyPath());
         }
+
+        System.out.println(JSON.toJSONString(null));
     }
 }
