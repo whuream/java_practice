@@ -17,17 +17,17 @@
 
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
-        <property name="configLocation" value="/WEB-INF/mybatis-config.xml"/>
-        <property name="typeAliasesPackage" value="com.ream.www.maventest"/>
-        <property name="mapperLocations" value="classpath*:maps/*.xml"/>
+        <property name="configLocation" value="classpath:mybatis/mybatis-config.xml"/>
+        <property name="typeAliasesPackage" value="com.ream.www.maventest.po"/>
+        <property name="mapperLocations" value="classpath:mybatis/mapper/test/*.xml"/>
     </bean>
 
     <!--专辑mapper-->
     <bean id="test2Mapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
-        <property name="mapperInterface" value="com.ream.www.maventest.map.Test2Mapper"></property>
+        <property name="mapperInterface" value="com.ream.www.maventest.mapper.Test2Mapper"></property>
         <property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
     </bean>
 
-    <context:component-scan base-package="com.ream.www.maventest.map"/>
+    <context:component-scan base-package="com.ream.www.maventest.mapper"/>
 
 </beans>

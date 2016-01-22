@@ -1,6 +1,5 @@
 package com.ream.www.maventest;
 
-import com.alibaba.fastjson.JSON;
 import com.google.common.base.Function;
 import com.google.common.base.Joiner;
 import com.google.common.collect.Iterators;
@@ -24,6 +23,7 @@ public class HelloWorld
     static Logger log = Logger.getLogger(HelloWorld.class);
 
     public static void main(String[] args){
+        log.info("test log");
 
     }
 
@@ -58,7 +58,7 @@ public class HelloWorld
 
         System.out.println(new DecimalFormat("#.00").format(new BigDecimal(12.00)));
 
-        ApplicationContext ctx = new ClassPathXmlApplicationContext("spring.xml");
+        ApplicationContext ctx = new ClassPathXmlApplicationContext("spring-beans.xml");
         ClassA classA2 = (ClassA) ctx.getBean("classAbean");
 
         //System.out.println(new Gson().toJson(classA2));

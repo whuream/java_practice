@@ -1,4 +1,4 @@
-package com.ream.www.maventest;
+package com.ream.www.maventest.po;
 
 /**
  * Created by tong on 12/8/15.

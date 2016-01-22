@@ -1,8 +1,8 @@
 package com.ream.www.maventest.controller;
 
 import com.alibaba.fastjson.JSON;
-import com.ream.www.maventest.Test2;
-import com.ream.www.maventest.map.Test2Mapper;
+import com.ream.www.maventest.po.Test2;
+import com.ream.www.maventest.mapper.Test2Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -28,5 +28,11 @@ public class MainController {
     public String b(Model model){
         model.addAttribute("message", "Hello World!");
         return "hello";
+    }
+
+    @RequestMapping("test")
+    @ResponseBody
+    public String test(Model model){
+        return "test succeed";
     }
 }

@@ -1,6 +1,6 @@
-package com.ream.www.maventest.map;
+package com.ream.www.maventest.mapper;
 
-import com.ream.www.maventest.Test2;
+import com.ream.www.maventest.po.Test2;
 
 /**
  * Created by tong on 12/8/15.
