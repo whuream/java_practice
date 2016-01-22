@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 /**
  * Created by tong on 12/11/15.
  */
-@Controller
+@Controller("mainController")
 public class MainController {
     @Autowired Test2Mapper test2Mapper;
 

@@ -1,4 +1,4 @@
-package com.ream.www.maventest;
+package com.ream.www.maventest.dto;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -11,7 +11,7 @@ import javax.validation.constraints.Size;
 /**
  * Created by tong on 10/16/15.
  */
-@Component(value = "classAbean")
+@Component(value = "classA")
 public class ClassA {
     public static class InnerClass{
         private long classId;

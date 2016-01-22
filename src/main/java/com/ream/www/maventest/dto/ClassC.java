@@ -1,4 +1,4 @@
-package com.ream.www.maventest;
+package com.ream.www.maventest.dto;
 
 import org.springframework.stereotype.Component;
 
@@ -7,7 +7,7 @@ import javax.validation.constraints.Min;
 /**
  * Created by tong on 10/29/15.
  */
-@Component(value = "testClassCbean")
+@Component(value = "classC")
 public class ClassC {
     @Min(value = 100000)
     private long a;

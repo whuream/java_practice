@@ -1,9 +1,11 @@
-package com.ream.www.maventest;
+package com.ream.www.maventest.main;
 
 import com.google.common.base.Function;
 import com.google.common.base.Joiner;
 import com.google.common.collect.Iterators;
 import com.google.common.collect.Lists;
+import com.ream.www.maventest.dto.ClassA;
+import com.ream.www.maventest.dto.ClassB;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 import org.apache.log4j.Logger;
 import org.codehaus.jackson.map.ObjectMapper;

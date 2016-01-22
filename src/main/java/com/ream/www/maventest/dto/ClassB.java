@@ -1,4 +1,4 @@
-package com.ream.www.maventest;
+package com.ream.www.maventest.dto;
 
 import javax.validation.constraints.Size;
 

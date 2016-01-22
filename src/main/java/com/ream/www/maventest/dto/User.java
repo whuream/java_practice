@@ -1,10 +1,11 @@
-package com.ream.www.maventest;
+package com.ream.www.maventest.dto;
 
 import com.alibaba.fastjson.JSON;
 import com.google.common.collect.Lists;
+import com.ream.www.maventest.CheckF;
+import com.ream.www.maventest.PrintMe;
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.ScriptAssert;
-import org.hibernate.validator.internal.metadata.core.ConstraintHelper;
 
 import java.util.List;
 import java.util.Set;

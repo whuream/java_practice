@@ -11,7 +11,6 @@
              xmlns:beans="http://www.springframework.org/schema/beans">
 
     <mvc:annotation-driven/>
-    <context:component-scan base-package="com.ream.www.maventest.controller"/>
 
     <beans:import resource="classpath:spring-beans.xml"/>
 
