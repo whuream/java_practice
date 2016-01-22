@@ -18,10 +18,10 @@ import static org.junit.Assert.*;
 @ContextConfiguration(locations = {"classpath:maven_test-servlet.xml"})
 public class AdviceTestTest {
     @Resource
-    AdviceTest adviceTest;
+    private AdviceTest adviceTest;
 
     @Resource
-    NoAdviceTest noAdviceTest;
+    private NoAdviceTest noAdviceTest;
 
     @Test
     public void testPrint() throws Exception {
