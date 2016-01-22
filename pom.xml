@@ -7,7 +7,7 @@
     <groupId>com.ream.www</groupId>
     <artifactId>maven-test</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <packaging>war</packaging>
     <name>test01 macen webapp</name>
     <url>http://www.baidu.com</url>
 
