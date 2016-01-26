@@ -35,4 +35,16 @@ public class MainController {
     public String test(Model model){
         return "test succeed";
     }
+
+    @RequestMapping("add")
+    @ResponseBody
+    public String add(){
+        return String.valueOf(test2Mapper.insertOne(new Test2("test")));
+    }
+
+    @RequestMapping("getall")
+    @ResponseBody
+    public String getall(){
+        return JSON.toJSONString(test2Mapper.getAll());
+    }
 }

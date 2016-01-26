@@ -7,6 +7,12 @@ public class Test2 {
     private Long id;
     private String name;
 
+    public Test2(String name){
+        this.name = name;
+    }
+
+    public Test2(){}
+
     public Long getId() {
         return id;
     }
