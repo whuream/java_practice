@@ -4,6 +4,8 @@ import com.alibaba.fastjson.JSON;
 import com.ream.www.maventest.po.Test2;
 import com.ream.www.maventest.mapper.Test2Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -46,5 +48,14 @@ public class MainController {
     @ResponseBody
     public String getall(){
         return JSON.toJSONString(test2Mapper.getAll());
+    }
+
+    @RequestMapping("json")
+    @ResponseBody
+    public ResponseEntity<Test2> getjson(){
+        Test2 test2 = new Test2();
+        test2.setName("name");
+        test2.setId(123l);
+        return new ResponseEntity<Test2>(test2, HttpStatus.OK);
     }
 }
