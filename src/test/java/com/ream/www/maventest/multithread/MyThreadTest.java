@@ -46,4 +46,38 @@ public class MyThreadTest extends TestCase {
         }
     }
 
+    public void testWhile(){
+        Thread t1 = new Thread(new MyThreadWhile("1"));
+
+        Thread t2 = new Thread(new MyThreadWhile("2"));
+
+        t1.start();
+
+        t2.start();
+
+        System.out.println("main thread");
+
+
+        t1.interrupt();
+
+        t2.interrupt();
+
+        // does not stop
+        System.out.println("call interrupt");
+
+        t1.stop();
+
+        t2.stop();
+
+        // stop
+        System.out.println("call stop");
+
+        try {
+            Thread.sleep(500000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+    }
+
 }
