@@ -4,6 +4,7 @@ import org.junit.Test;
 /**
  * Created by tong on 1/26/16.
  */
+// config file is resources/log4j.properties
 public class Log4jTest {
     private static Logger logger = Logger.getLogger(Log4jTest.class);
 
