@@ -10,6 +10,8 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.BiFunction;
+import java.util.function.BinaryOperator;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -65,10 +67,25 @@ public class ReduceTest {
     public void testMapJ8(){
         System.out.println(Stream.of(1l, 2l, 3l).map(t -> t * t).collect(Collectors.toList()));
 
+        System.out.println(Stream.of(1l, 2l, 3l).map(t -> t * t).reduce(new ArrayList<Long>(),
+                (longs, aLong) -> {
+                    longs.add(aLong);
+                    return longs;
+                }, (longs, longs2) -> {
+                    longs.addAll(longs2);
+                    return longs;
+                }));
+
         System.out.println(Stream.of(1l, 2l, 3l).filter(t -> t > 2).collect(Collectors.toList()));
 
         System.out.println(Stream.of(1l, 2l, 3l).reduce(100l, (a, b) -> a + b));
 
         System.out.println(0);
+
+        Stream<Long> stream = Lists.newArrayList(1l, 2l, 3l).stream();
+
+        System.out.println(stream.isParallel());
+
+        Long a = stream.reduce(100l, (b, c) -> b + c);
     }
 }
