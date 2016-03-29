@@ -1,6 +1,6 @@
 package com.ream.www.maventest.validate;
 
-import com.ream.www.maventest.utils.ValidateHelper;
+import com.ream.www.maventest.util.ValidateHelper;
 import org.junit.Test;
 
 /**

@@ -1,4 +1,4 @@
-package com.ream.www.maventest.utils;
+package com.ream.www.maventest.util;
 
 import junit.framework.TestCase;
 
