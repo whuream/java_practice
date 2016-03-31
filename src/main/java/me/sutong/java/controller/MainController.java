@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
@@ -20,7 +21,7 @@ public class MainController {
     UserMapper userMapper;
 
     @RequestMapping("/hello")
-    public String b(Model model){
+    public String hellp(Model model){
         model.addAttribute("message", "Hello World!");
         return "hello";
     }
@@ -31,32 +32,26 @@ public class MainController {
         return "test succeed";
     }
 
-    @RequestMapping("/a")
+    @RequestMapping("/select")
     @ResponseBody
-    public String h(){
-        User test = userMapper.select(1l);
-
+    public String select(@RequestParam Long id){
+        User test = userMapper.select(id);
         return JSON.toJSONString(test);
     }
 
-    @RequestMapping("add")
+    @RequestMapping("/insert")
     @ResponseBody
-    public String add(){
-        return String.valueOf(userMapper.insert(new User("test")));
+    public String insert(@RequestParam String name){
+        User user = new User(name);
+        Long ret = userMapper.insert(user);
+
+        return String.format("ret: %d, user: %s", ret, JSON.toJSONString(user));
     }
 
-    @RequestMapping("getall")
+    @RequestMapping("/get_all")
     @ResponseBody
-    public String getall(){
+    public String getAll(){
         return JSON.toJSONString(userMapper.getAll());
     }
 
-    @RequestMapping("json")
-    @ResponseBody
-    public ResponseEntity<User> getjson(){
-        User user = new User();
-        user.setName("name");
-        user.setId(123l);
-        return new ResponseEntity<User>(user, HttpStatus.OK);
-    }
 }

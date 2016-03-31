@@ -23,10 +23,9 @@ public class UserMapperTest {
     public void testSelect() throws Exception {
         User user = new User("test select");
 
-        userMapper.insert(user);
+        Long ret = userMapper.insert(user);
 
         System.out.println(JSON.toJSONString(userMapper.select(user.getId())));
-
 
     }
 
@@ -37,6 +36,9 @@ public class UserMapperTest {
 
     @Test
     public void testInsert() throws Exception {
-        System.out.println(userMapper.insert(new User("name")));
+        User user = new User("test insert");
+        Long ret = userMapper.insert(user);
+
+        System.out.println(JSON.toJSONString(user));
     }
 }
