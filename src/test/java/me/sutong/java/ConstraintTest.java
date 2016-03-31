@@ -1,3 +1,5 @@
+package me.sutong.java;
+
 import com.alibaba.fastjson.JSON;
 import com.google.common.base.Joiner;
 import me.sutong.java.constraints.ElementMin;
