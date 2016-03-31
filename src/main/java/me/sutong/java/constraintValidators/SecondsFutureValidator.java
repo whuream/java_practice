@@ -1,4 +1,4 @@
-package me.sutong.java.constraintValidator;
+package me.sutong.java.constraintValidators;
 
 import me.sutong.java.constraints.SecondsFuture;
 import org.hibernate.validator.constraintvalidation.HibernateConstraintValidatorContext;
@@ -17,7 +17,7 @@ public class SecondsFutureValidator implements ConstraintValidator<SecondsFuture
 
     @Override
     public boolean isValid(Object value, ConstraintValidatorContext context) {
-        if (value == null){
+        if (value == null) {
             return true;
         }
 

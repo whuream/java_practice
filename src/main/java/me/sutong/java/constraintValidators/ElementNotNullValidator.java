@@ -1,4 +1,4 @@
-package me.sutong.java.constraintValidator;
+package me.sutong.java.constraintValidators;
 
 
 import me.sutong.java.constraints.ElementNotNull;
@@ -11,16 +11,16 @@ import java.util.Map;
 /**
  * Created by tong on 1/14/16.
  */
-public class ElementNotNullValidator implements ConstraintValidator<ElementNotNull, Object>{
+public class ElementNotNullValidator implements ConstraintValidator<ElementNotNull, Object> {
 
     @Override
     public void initialize(ElementNotNull constraintAnnotation) {
 
     }
 
-    private boolean isValidCollection(Collection value){
-        for(Object item: value){
-            if(item == null){
+    private boolean isValidCollection(Collection value) {
+        for (Object item : value) {
+            if (item == null) {
                 return false;
             }
         }
@@ -29,7 +29,7 @@ public class ElementNotNullValidator implements ConstraintValidator<ElementNotNu
 
     @Override
     public boolean isValid(Object value, ConstraintValidatorContext context) {
-        if(value == null){
+        if (value == null) {
             return true;
         }
 
