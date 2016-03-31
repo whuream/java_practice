@@ -1,4 +1,4 @@
-package me.sutong.java.util.function;
+package me.sutong.java.tools;
 
 /**
  * Created by tong on 1/11/16.
@@ -11,14 +11,14 @@ import java.util.Iterator;
  */
 public class Reduce {
 
-    public interface Function<T, R>{
+    public interface Function<T, R> {
         R apply(T t, R r);
     }
 
     public static <T, R> R reduce(final Iterator<? extends T> iterator, final R begin,
-                                  final Function<? super T, R> function){
+                                  final Function<? super T, R> function) {
         R ret = begin;
-        while (iterator.hasNext()){
+        while (iterator.hasNext()) {
             ret = function.apply(iterator.next(), ret);
         }
 

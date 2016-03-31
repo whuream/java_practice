@@ -1,4 +1,6 @@
-package me.sutong.java.util.function;
+package me.sutong.java.tools;
+
+import me.sutong.java.function.BiFunction;
 
 import java.util.Iterator;
 import java.util.Objects;
@@ -10,7 +12,7 @@ import java.util.stream.StreamSupport;
 /**
  * Created by tong on 3/29/16.
  */
-public class ZipJ8 {
+public class Zip {
     public static <T, U, R> Stream<R> zip(final Stream<? extends T> streamT, final Stream<? extends U> streamU,
                                           final BiFunction<? super T, ? super U, ? extends R> biFunction) {
         Objects.requireNonNull(biFunction);
