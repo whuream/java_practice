@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller("mainController")
 public class MainController {
     @Autowired
-    UserMapper test2Mapper;
+    UserMapper userMapper;
 
     @RequestMapping("/hello")
     public String b(Model model){
@@ -34,7 +34,7 @@ public class MainController {
     @RequestMapping("/a")
     @ResponseBody
     public String h(){
-        User test = test2Mapper.select(1);
+        User test = userMapper.select(1l);
 
         return JSON.toJSONString(test);
     }
@@ -42,13 +42,13 @@ public class MainController {
     @RequestMapping("add")
     @ResponseBody
     public String add(){
-        return String.valueOf(test2Mapper.insert(new User("test")));
+        return String.valueOf(userMapper.insert(new User("test")));
     }
 
     @RequestMapping("getall")
     @ResponseBody
     public String getall(){
-        return JSON.toJSONString(test2Mapper.getAll());
+        return JSON.toJSONString(userMapper.getAll());
     }
 
     @RequestMapping("json")

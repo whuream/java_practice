@@ -4,8 +4,17 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="me.sutong.java.mapper.dev.UserMapper">
 
-    <insert id="insert">
-        insert INTO user (name) VALUE (#{name})
+    <insert id="insert" keyProperty="user.id" useGeneratedKeys="true" keyColumn="id">
+        insert INTO user (
+        <if test="user.name != null">
+            name
+        </if>
+        )
+        VALUE (
+        <if test="user.name != null">
+            #{user.name}
+        </if>
+        )
     </insert>
 
     <select id="select" resultType="me.sutong.java.po.User">
@@ -13,7 +22,7 @@
     </select>
 
     <select id="getAll" resultType="me.sutong.java.po.User">
-        SELECT * from test2
+        SELECT * from user
     </select>
 
 </mapper>

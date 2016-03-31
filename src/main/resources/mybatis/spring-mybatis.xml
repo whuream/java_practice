@@ -22,12 +22,9 @@
         <property name="mapperLocations" value="classpath:mybatis/mapper/dev/*.xml"/>
     </bean>
 
-    <!--专辑mapper-->
-    <bean id="user" class="org.mybatis.spring.mapper.MapperFactoryBean">
-        <property name="mapperInterface" value="me.sutong.java.mapper.UserMapper"></property>
+    <bean id="userMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+        <property name="mapperInterface" value="me.sutong.java.mapper.dev.UserMapper"></property>
         <property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
     </bean>
-
-    <context:component-scan base-package="me.sutong.java.mapper"/>
 
 </beans>
