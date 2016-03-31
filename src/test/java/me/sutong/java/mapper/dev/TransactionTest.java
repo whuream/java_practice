@@ -21,7 +21,13 @@ public class TransactionTest {
     @Test
     public void test(){
         try {
-            // todo transaction failed
+            // transaction succeed
+            // the mysql db must be a innodb
+            // CREATE TABLE `user` (
+            // `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+            // `name` varchar(100) DEFAULT NULL,
+            // PRIMARY KEY (`id`))
+            // ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=latin1;
             System.out.println(transactionTarget.insert("transaction test"));
         }catch (Exception e){
             e.printStackTrace();
