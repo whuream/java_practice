@@ -6,18 +6,18 @@ import java.util.Iterator;
  * Created by tong on 3/29/16.
  */
 public class Zip {
-    public static <T, U, R> Iterator<R> zip(final Iterator<? extends T> iterator1, final Iterator<? extends U> iterator2,
+    public static <T, U, R> Iterator<R> zip(final Iterator<? extends T> iteratorT, final Iterator<? extends U> iteratorU,
                                   final BiFunction<? super T, ? super U, ? extends R> function){
 
         return new Iterator<R>() {
             @Override
             public boolean hasNext() {
-                return iterator1.hasNext() && iterator2.hasNext();
+                return iteratorT.hasNext() && iteratorU.hasNext();
             }
 
             @Override
             public R next() {
-                return function.apply(iterator1.next(), iterator2.next());
+                return function.apply(iteratorT.next(), iteratorU.next());
             }
         };
     }

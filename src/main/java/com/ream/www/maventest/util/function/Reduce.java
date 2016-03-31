@@ -15,7 +15,8 @@ public class Reduce {
         R apply(T t, R r);
     }
 
-    public static <T, R> R reduce(final Iterator<? extends T> iterator, final R begin, final Function<? super T, R> function){
+    public static <T, R> R reduce(final Iterator<? extends T> iterator, final R begin,
+                                  final Function<? super T, R> function){
         R ret = begin;
         while (iterator.hasNext()){
             ret = function.apply(iterator.next(), ret);

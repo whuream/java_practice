@@ -9,6 +9,7 @@ import com.ream.www.maventest.util.function.Reduce;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.function.BiFunction;
 import java.util.function.BinaryOperator;
@@ -22,7 +23,7 @@ public class ReduceTest {
 
     @Test
     public void testReduce() throws Exception {
-        System.out.println(Reduce.reduce(Lists.newArrayList(1, 2, 3).iterator(), 10,
+        System.out.println(Reduce.reduce(Arrays.asList(1, 2, 3).iterator(), 10,
                 new Reduce.Function<Integer, Integer>() {
                     public Integer apply(Integer integer, Integer integer2) {
                         return integer + integer2;
