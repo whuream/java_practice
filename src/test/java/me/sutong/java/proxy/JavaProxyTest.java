@@ -45,6 +45,7 @@ public class JavaProxyTest {
     public void test(){
         ProxyTargetProxy proxyTargetProxy = new ProxyTargetProxy();
 
+        // must proxy a class that implement an interface
         ProxyTarget proxyTarget = (ProxyTarget) proxyTargetProxy.getInstance(new ProxyTargetImpl());
 
         System.out.println(proxyTarget.square(2l));
