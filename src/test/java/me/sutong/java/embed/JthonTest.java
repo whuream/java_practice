@@ -4,6 +4,8 @@ import org.junit.Test;
 import org.python.core.PyObject;
 import org.python.util.PythonInterpreter;
 
+import java.util.Arrays;
+
 /**
  * Created by tong on 3/31/16.
  */
@@ -13,14 +15,15 @@ public class JthonTest {
     public void test(){
         PythonInterpreter pythonInterpreter = new PythonInterpreter();
 
-        pythonInterpreter.set("a", 12l);
+        pythonInterpreter.set("number", 12l);
 
-        pythonInterpreter.exec("a *= a");
+        pythonInterpreter.exec("number *= number");
 
-        PyObject a = pythonInterpreter.get("a");
+        PyObject number = pythonInterpreter.get("number");
 
-        Long l = (Long)a.__tojava__(Long.class);
+        Object numberLong = number.__tojava__(Long.class);
 
-        System.out.println(l);
+        System.out.println(Arrays.asList(number.toString(), numberLong.getClass().toString(),
+                numberLong.toString()));
     }
 }

@@ -6,6 +6,7 @@ import org.junit.Test;
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
+import java.util.Arrays;
 
 /**
  * Created by tong on 3/31/16.
@@ -22,14 +23,13 @@ public class JsTest {
 
         Object object = scriptEngine.get("obj");
 
-        System.out.println(JSON.toJSONString(object));
+        scriptEngine.put("number", 12l);
 
-        scriptEngine.put("a", 12l);
+        scriptEngine.eval("number *= number");
 
-        scriptEngine.eval("a *= a");
+        Object numberLong = scriptEngine.get("number");
 
-        Double a = (Double)scriptEngine.get("a");
-
-        System.out.println(a);
+        System.out.println(Arrays.asList(numberLong.getClass().toString(), numberLong.toString(),
+                object.getClass().toString(), JSON.toJSONString(object)));
     }
 }
