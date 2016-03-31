@@ -23,9 +23,9 @@ public class GroovyTest {
 
         GroovyShell groovyShell = new GroovyShell(binding);
 
-        Object ret = groovyShell.evaluate("number *= number");
-
         Object retNull = groovyShell.evaluate("println 'hello world!'");
+
+        Object ret = groovyShell.evaluate("number *= number");
 
         Object numberLong = binding.getVariable("number");
 

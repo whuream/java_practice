@@ -14,6 +14,7 @@ public class JthonTest {
     @Test
     public void test(){
         PythonInterpreter pythonInterpreter = new PythonInterpreter();
+        pythonInterpreter.exec("print('hello world!')");
 
         pythonInterpreter.set("number", 12l);
 
@@ -23,7 +24,7 @@ public class JthonTest {
 
         Object numberLong = number.__tojava__(Long.class);
 
-        System.out.println(Arrays.asList(number.toString(), numberLong.getClass().toString(),
-                numberLong.toString()));
+        System.out.println(Arrays.asList(number.getClass().toString(), number.toString(),
+                numberLong.getClass().toString(), numberLong.toString()));
     }
 }
