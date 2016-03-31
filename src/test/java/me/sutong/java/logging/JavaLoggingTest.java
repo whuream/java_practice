@@ -13,7 +13,9 @@ public class JavaLoggingTest {
 
     @Test
     public void test(){
-        // todo how to set logging level
+        // use
+        // -Djava.util.logging.config.file=/Users/tong/logging.properties
+        // to set logging level
         logger.finest("java logging finest");
         logger.info("java logging info");
     }
