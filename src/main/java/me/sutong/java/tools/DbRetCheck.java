@@ -1,4 +1,4 @@
-package me.sutong.java.util;
+package me.sutong.java.tools;
 
 /**
  * Created by tong on 3/9/16.
