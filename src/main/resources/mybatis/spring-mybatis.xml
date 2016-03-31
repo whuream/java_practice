@@ -24,7 +24,7 @@
 
     <!--专辑mapper-->
     <bean id="test2Mapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
-        <property name="mapperInterface" value="com.ream.www.maventest.mapper.Test2Mapper"></property>
+        <property name="mapperInterface" value="me.sutong.java.mapper.Test2Mapper"></property>
         <property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
     </bean>
 

@@ -3,15 +3,14 @@ import com.google.common.base.Function;
 import com.google.common.base.Joiner;
 import com.google.common.collect.Iterators;
 import com.google.common.collect.Lists;
-import com.ream.www.maventest.constraints.ElementMin;
-import com.ream.www.maventest.constraints.ElementNotNull;
-import com.ream.www.maventest.constraints.SecondsFuture;
+import me.sutong.java.constraints.ElementMin;
+import me.sutong.java.constraints.ElementNotNull;
+import me.sutong.java.constraints.SecondsFuture;
 import org.junit.Test;
 
 import javax.validation.ConstraintViolation;
 import javax.validation.Validation;
 import java.util.List;
-import java.util.Set;
 
 /**
  * Created by tong on 3/9/16.
