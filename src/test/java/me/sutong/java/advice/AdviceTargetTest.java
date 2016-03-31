@@ -5,6 +5,8 @@ import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import javax.annotation.Resource;
+
 import static org.junit.Assert.*;
 
 /**
@@ -14,8 +16,13 @@ import static org.junit.Assert.*;
 @ContextConfiguration(locations = {"classpath:spring-beans.xml"})
 public class AdviceTargetTest {
 
+    @Resource
+    AdviceTarget adviceTarget;
+
     @Test
     public void testSquare() throws Exception {
-        System.out.println(AdviceTarget.square(2l));
+        // static method can not be proxied
+        // noon bean class can not be proxied
+        System.out.println(adviceTarget.square(2l));
     }
 }

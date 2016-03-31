@@ -1,13 +1,15 @@
 package me.sutong.java.advice;
 
+import org.springframework.stereotype.Component;
 import org.springframework.test.context.ContextConfiguration;
 
 /**
  * Created by tong on 3/31/16.
  */
+@Component("adviceTarget")
 public class AdviceTarget {
 
-    public static Long square(Long input){
+    public Long square(Long input){
         return input * input;
     }
 }
