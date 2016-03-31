@@ -21,27 +21,27 @@ public class MainController {
     UserMapper userMapper;
 
     @RequestMapping("/hello")
-    public String hellp(Model model){
+    public String hello(Model model) {
         model.addAttribute("message", "Hello World!");
         return "hello";
     }
 
     @RequestMapping("/test")
     @ResponseBody
-    public String test(Model model){
+    public String test(Model model) {
         return "test succeed";
     }
 
     @RequestMapping("/select")
     @ResponseBody
-    public String select(@RequestParam Long id){
+    public String select(@RequestParam Long id) {
         User test = userMapper.select(id);
         return JSON.toJSONString(test);
     }
 
     @RequestMapping("/insert")
     @ResponseBody
-    public String insert(@RequestParam String name){
+    public String insert(@RequestParam String name) {
         User user = new User(name);
         Long ret = userMapper.insert(user);
 
@@ -50,7 +50,7 @@ public class MainController {
 
     @RequestMapping("/get_all")
     @ResponseBody
-    public String getAll(){
+    public String getAll() {
         return JSON.toJSONString(userMapper.getAll());
     }
 
