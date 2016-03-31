@@ -13,7 +13,7 @@ import javax.annotation.Resource;
  * Created by tong on 3/31/16.
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = {"file:src/main/resources/spring-beans.xml"})
+@ContextConfiguration(locations = {"classpath:spring-beans.xml"})
 public class UserMapperTest {
 
     @Resource
