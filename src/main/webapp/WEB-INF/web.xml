@@ -7,23 +7,22 @@
 
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>/WEB-INF/maven_test-servlet.xml</param-value>
+        <param-value>/WEB-INF/webx.xml</param-value>
     </context-param>
 
     <servlet>
-        <servlet-name>maven_test</servlet-name>
+        <servlet-name>main</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>maven_test</servlet-name>
-        <url-pattern>/c/*</url-pattern>
+        <servlet-name>main</servlet-name>
+        <url-pattern>/main/*</url-pattern>
     </servlet-mapping>
 
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
-
 
 </web-app> 

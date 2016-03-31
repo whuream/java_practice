@@ -3,15 +3,16 @@ package me.sutong.java.po;
 /**
  * Created by tong on 12/8/15.
  */
-public class Test2 {
+public class User {
     private Long id;
+
     private String name;
 
-    public Test2(String name){
+    public User(String name){
         this.name = name;
     }
 
-    public Test2(){}
+    public User(){}
 
     public Long getId() {
         return id;
