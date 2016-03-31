@@ -12,18 +12,20 @@ import org.springframework.stereotype.Component;
 @Component("advice")
 @Aspect
 public class Advice {
-    private static final String str = "INAdvice";
+    private static final String str = "in advice";
 
-    @Around("execution(* me.sutong.java.advice.AdviceTest.print(..))")
-    private String doAround(ProceedingJoinPoint pjp){
+    @Around("execution(* me.sutong.java.advice.AdviceTarget.square(..))")
+    public Object doAround(ProceedingJoinPoint pjp) {
+        Object result = 1l;
 
         try {
-            Object result = pjp.proceed(pjp.getArgs());
+            result = pjp.proceed(pjp.getArgs());
         } catch (Throwable throwable) {
             throwable.printStackTrace();
         }
 
+
         System.out.println(str);
-        return str;
+        return (Long)result * (Long)result;
     }
 }
