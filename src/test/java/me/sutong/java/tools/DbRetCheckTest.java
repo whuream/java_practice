@@ -12,7 +12,10 @@ public class DbRetCheckTest {
     @Test
     public void testDbRetException() throws Exception {
         Long dbRet = 1l;
-
-        DbRetCheck.dbRetException(dbRet, 2l, DbRetCheck.CompareTypeEnum.EQUAL);
+        try {
+            DbRetCheck.dbRetException(dbRet, 2l, DbRetCheck.CompareTypeEnum.EQUAL);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 }
