@@ -3,6 +3,7 @@ package me.sutong.java.controller;
 import com.alibaba.fastjson.JSON;
 import me.sutong.java.po.User;
 import me.sutong.java.mapper.dev.UserMapper;
+import me.sutong.java.vo.RequestObjectVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -28,7 +29,7 @@ public class MainController {
 
     @RequestMapping("/test")
     @ResponseBody
-    public String test(Model model) {
+    public String test() {
         return "test succeed";
     }
 
@@ -52,6 +53,12 @@ public class MainController {
     @ResponseBody
     public String getAll() {
         return JSON.toJSONString(userMapper.getAll());
+    }
+
+    @RequestMapping("/request_object")
+    @ResponseBody
+    public RequestObjectVO requestObject(RequestObjectVO requestObjectVO){
+        return requestObjectVO;
     }
 
 }
