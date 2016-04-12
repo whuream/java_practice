@@ -4,4 +4,7 @@ build
 gradle
 *.iml
 target
+classes
+gradlew
+gradlew.bat
 

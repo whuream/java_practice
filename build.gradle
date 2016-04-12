@@ -1,5 +1,7 @@
 apply plugin: 'java'
 
+apply plugin: 'war'
+
 group = 'me.sutong'
 version = '1.0-SNAPSHOT'
 
@@ -10,17 +12,10 @@ targetCompatibility = 1.8
 
 
 
-
 repositories {
-    mavenCentral()
+        
+     mavenCentral()
 }
-
-jar{
-    manifest {
-        attributes 'Main-Class': 'me.sutong.java.main.Main'
-    }
-}
-
 dependencies {
     compile group: 'log4j', name: 'log4j', version:'1.2.12'
     compile group: 'org.slf4j', name: 'slf4j-api', version:'1.7.16'
@@ -47,9 +42,5 @@ dependencies {
     compile group: 'org.python', name: 'jython-standalone', version:'2.7.0'
     compile group: 'org.codehaus.groovy', name: 'groovy-all', version:'2.4.6'
     testCompile group: 'junit', name: 'junit', version:'4.10'
-    compile(group: 'javax.servlet', name: 'servlet-api', version:'2.5') {
-       /* This dependency was originally in the Maven provided scope, but the project was not of type war.
-       This behavior is not yet supported by Gradle, so this dependency has been converted to a compile dependency.
-       Please review and delete this closure when resolved. */
-    }
+    compile group: 'javax.servlet', name: 'servlet-api', version:'2.5'
 }
