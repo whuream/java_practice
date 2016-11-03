@@ -12,14 +12,14 @@ import javax.annotation.Resource;
 /**
  * Created by tong on 3/31/16.
  */
-@RunWith(SpringJUnit4ClassRunner.class)
+//@RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:spring-beans.xml"})
 public class UserMapperTest {
 
     @Resource
     UserMapper userMapper;
 
-    @Test
+//    @Test
     public void testSelect() throws Exception {
         User user = new User("test select");
 
@@ -29,12 +29,12 @@ public class UserMapperTest {
 
     }
 
-    @Test
+//    @Test
     public void testGetAll() throws Exception {
         System.out.println(JSON.toJSONString(userMapper.getAll()));
     }
 
-    @Test
+//    @Test
     public void testInsert() throws Exception {
         User user = new User("test insert");
         Long ret = userMapper.insert(user);

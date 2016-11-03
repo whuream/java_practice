@@ -11,14 +11,14 @@ import javax.annotation.Resource;
 /**
  * Created by tong on 3/31/16.
  */
-@RunWith(SpringJUnit4ClassRunner.class)
+//@RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:spring-beans.xml"})
 public class TransactionTest {
 
     @Resource
     private TransactionTarget transactionTarget;
 
-    @Test
+//    @Test
     public void test(){
         try {
             // transaction succeed
